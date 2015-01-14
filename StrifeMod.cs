@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Threading.Tasks;
+using StrifeModManager;
+using System.Drawing;
 
 namespace WpfApplication2
 {
@@ -28,20 +30,14 @@ namespace WpfApplication2
 
     class StrifeMod : Mod
     {
-        private string appVersion;
-        private string modXmlVersion;
-        private string name;
-        private string modVersion;
-        private string description;
-        private string author;
-        private string webLink;
-        private string updateCheckUrl;
-        private string updateDownloadUrl;
+
+        public ModXmlDto modXml { get; set; }
 
         // maybe changed to another object later on (like Image)
-        private string icon;
+        public Image icon { get; set; }
 
         // to be defined
         //private IList<ZipFileEntry> modfiles;
+        public string ModFilePath { get; set; }
     }
 }
