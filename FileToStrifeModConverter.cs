@@ -28,9 +28,11 @@ namespace WpfApplication2 {
         }
 
         private StrifeMod openZipFile(string modificationFileName) {
+            
             ZipArchive archive = ZipFile.OpenRead(modificationFileName);
             StrifeMod strifeMod = new StrifeMod();
             strifeMod.ModFilePath = modificationFileName;
+            strifeMod.modSize = getModificationSize(modificationFileName);
             System.Console.Out.WriteLine("mod file path: " + modificationFileName);
             foreach (ZipArchiveEntry archiveEntry in archive.Entries) {
                 System.Console.Out.WriteLine(archiveEntry.FullName);
@@ -42,6 +44,11 @@ namespace WpfApplication2 {
                 }
                }
             return strifeMod;
+        }
+
+        private long getModificationSize(string modificationFileName) {
+            FileInfo fileInfo = new FileInfo(modificationFileName);
+            return fileInfo.Length;
         }
 
         private ModXmlDto parseModXml(ZipArchiveEntry archiveEntry) {

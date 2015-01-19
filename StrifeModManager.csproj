@@ -39,6 +39,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -56,6 +57,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DiffMatchPatch.cs" />
+    <Compile Include="DiffPatcher.cs" />
     <Compile Include="ModXmlDto.cs" />
     <Compile Include="StrifeMod.cs" />
     <Page Include="MainWindow.xaml">

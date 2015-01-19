@@ -39,5 +39,8 @@ namespace WpfApplication2
         // to be defined
         //private IList<ZipFileEntry> modfiles;
         public string ModFilePath { get; set; }
+
+        // size of the strifemod file in bytes
+        public long modSize { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StrifeModManager;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,7 @@ namespace WpfApplication2
 
         private void Button_Click(object sender, RoutedEventArgs e) {
             ModPathReader modPathReader = new ModPathReader(modDirectory.Text);
+            DiffPatcher.makeChangesToFile();
         }
     }
 }
